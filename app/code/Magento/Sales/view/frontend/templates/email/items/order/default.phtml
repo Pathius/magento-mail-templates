@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+
+/** @var $block \Magento\Sales\Block\Order\Email\Items\DefaultItems */
+
+/** @var $_item \Magento\Sales\Model\Order\Item */
+$_item = $block->getItem();
+$_order = $_item->getOrder();
+?>
+<div class="order-item-container">
+    <div class="order-data-cell">
+        <h4 class="order-name text-bold">
+            <?= $block->escapeHtml($_item->getName()) ?>
+        </h4>
+        <p class="order-desc-key text-regular color-gray-dark">
+            Reference: 
+            <span class="order-desc-value text-medium">
+                <?= $block->escapeHtml(__('SKU')) ?>: <?= $block->escapeHtml($block->getSku($_item)) ?>
+            </span>
+        </p>
+        <?php if ($block->getItemOptions()) : ?>
+            <?php foreach ($block->getItemOptions() as $option) : ?>
+                <p class="order-desc-key text-regular color-gray-dark">
+                <?= $block->escapeHtml($option['label']) ?>: 
+                    <span class="order-desc-value text-medium">
+                        <?= /* @noEscape */  nl2br($block->escapeHtml($option['value'])) ?>
+                    </span>
+                </p>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+    <div class="order-data-cell order-data-cell-right order-item-right">
+        <div class="order-quantity color-black text-regular"><?= (float) $_item->getQtyOrdered() ?></div>
+        <p class="order-prices">
+        <?= /* @noEscape */ $block->getItemPrice($_item) ?>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,140 @@
+.color-black {
+  color: black !important;
+}
+
+.color-brand {
+  color: #ef7f85 !important;
+}
+
+.color-gray-light {
+  color: #a5a5a5 !important;
+}
+
+.color-gray-dark {
+  color: #7b7b7b !important;
+}
+
+.text-regular {
+  font-family: Ubuntu;
+  font-style: normal;
+}
+
+.text-medium {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.text-bold {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.order-title {
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+@media all and (max-width: 980px) {
+  .order-title {
+    font-size: 23px;
+    line-height: 28px;
+  }
+}
+
+.order-data-cell {
+  width: 49%;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.order-data-cell-right {
+  text-align: right;
+  display: inline-block;
+}
+
+.order-item-container {
+  position: relative;
+  margin: 13px 0;
+}
+
+.order-item-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.order-name {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.order-desc-key {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.order-desc-value {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.order-quantity {
+  display: inline-block;
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  width: 49px;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 28px;
+  margin: 0 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15%;
+}
+
+@media all and (max-width: 980px) {
+  .order-quantity {
+    right: 20%;
+  }
+}
+
+.order-prices {
+  display: inline;
+}
+
+.price-actual {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.price-original {
+  font-size: 13px;
+  line-height: 24px;
+  text-decoration-line: line-through;
+}
+
+.order-summary {
+  margin-top: 36px;
+}
+
+.order-summary-key {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.order-summary-value {
+  font-size: 19px;
+  line-height: 32px;
+}
+
+.order-grand {
+  font-size: 24px;
+  line-height: 32px;
+}

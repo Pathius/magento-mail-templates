@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * @var $block \Magento\Sales\Block\Order\Totals
+ * @see \Magento\Sales\Block\Order\Totals
+ */
+?>
+<?php foreach ($block->getTotals() as $_code => $_total) : ?>
+    <?php if ($_total->getBlockName()) : ?>
+        <?= $block->getChildHtml($_total->getBlockName(), false) ?>
+    <?php else :?>
+      <div class="order-summary order-data-cell">
+        <h3 class="<?= $_code == 'grand_total' ? 'order-grand' : 'order-summary-key' ?> text-medium <?= $_code == 'grand_total' ? '' : 'color-gray-light' ?>">
+          <?= $block->escapeHtml($_total->getLabel()) ?>
+        </h3>
+      </div>
+      <div class="order-summary order-data-cell order-data-cell-right">
+        <p class="<?= $_code == 'grand_total' ? 'order-grand text-medium color-brand' : 'order-summary order-data-cell order-data-cell-right' ?>">
+          <?= /* @noEscape */ $block->formatValue($_total) ?>
+        </p>
+      </div>
+    <?php endif; ?>
+<?php endforeach?>
