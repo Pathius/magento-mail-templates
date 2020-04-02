@@ -109,9 +109,10 @@
   display: inline;
 }
 
-.price-actual {
+.price {
   font-size: 13px;
   line-height: 24px;
+  color: #ef7f85 !important;
 }
 
 .price-original {
